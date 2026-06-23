@@ -59,8 +59,6 @@ DfPubBin 是一款 Minecraft Paper/Spigot 服务器垃圾桶插件，提供公�
 | `/pbin priv` | 打开私人垃圾桶 | 无 |
 | `/pbin2load` | 热加载配置文件 | `dfpubbin.reload` |
 
-> 别名：`/trash`、`/garbage` 均可替代 `/pbin`
-
 ### 界面操作
 
 #### 垃圾桶界面
