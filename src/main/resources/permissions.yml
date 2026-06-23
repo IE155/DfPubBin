@@ -1,0 +1,4 @@
+dfpubbin.reload:
+  description: 允许玩家重新加载配置文件
+  default: op
+

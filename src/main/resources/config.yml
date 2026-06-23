@@ -1,0 +1,201 @@
+# 是否启用 /pbin 指令
+# 设置为 false 将禁用 /pbin 指令
+# 一键关闭垃圾桶功能
+enable-pbin-command: true
+
+
+
+# 配置最大页数
+# -1 表示没有限制，也就是页数可以无限增长
+max-pages: -1
+
+# 新物品提示设置
+new-item-notification:
+  # 是否启用新物品提示
+  enabled: false
+
+
+
+# 周期性提醒设置
+periodic-reminder:
+  # 是否启用周期性提醒
+  enabled: false
+  # 提醒间隔（分钟），默认为120分钟（2小时）
+  interval-minutes: 120
+  # 自定义提醒消息
+  message: "§2[DfPubBin]§e公共垃圾桶出现新物品"
+
+
+
+
+
+# 物品拿取冷却时间设置（秒）
+item-pickup-cooldown: 2
+
+
+
+# 掉落物处理设置
+dropped-item-cleanup:
+  # 启用或禁用掉落物处理功能（将所有掉落物放入垃圾桶）
+  enabled: true
+  # 处理的时间间隔（分钟）
+  interval-minutes: 10
+
+# 禁用原版掉落物刷新机制设置
+disable-item-despawn:
+  # 启用或禁用禁用原版掉落物5分钟消失机制
+  # 当启用时，掉落物将不会自然消失
+  enabled: true
+
+# 自定义消息配置
+messages:
+
+  # 公共垃圾桶出现稀有物品消息
+  rare-item-broadcast: "§2§l[DfPubBin]§e公共垃圾桶出现§l§d稀有物品 "
+  rare-item-click-text: "§a(点击查看!)"
+
+  # 公共垃圾桶出现新物品消息
+  new-item-broadcast: "§2§l[DfPubBin]§e公共垃圾桶出现新物品 "
+  new-item-click-text: "§a(点击查看!)"
+
+
+
+
+
+ # 指令相关消息
+  command-disabled: "§c该指令已被禁用"
+  command-usage: "§c用法: /pbin <pub|priv>"
+  command-invalid: "§c无效的子指令，请使用 /pbin <pub|priv>"
+  
+  # 物品取回相关消息
+  item-pickup-cooldown: "§c操作频繁，请%seconds%秒后重试"
+  
+  # 垃圾桶相关消息
+  trash-full: "§c垃圾桶已满，无法丢弃更多物品！"
+  
+  # 丢弃确认界面相关消息
+  discard-cancel: "§c取消丢弃操作"
+  discard-success: "§a物品已成功丢弃到垃圾桶"
+
+
+
+
+# 自动清理垃圾桶设置
+auto-clean:
+  # 启用或禁用自动清理功能
+  enabled: true
+  # 自动清理的时间间隔（以 tick 为单位，20 ticks = 1秒）
+  # 1200 ticks 即 60秒 = 1分钟
+  interval-ticks: 480000
+  whitelist-items: # 添加白名单物品列表
+    # 块类
+    - "GOLD_BLOCK"                    # 金块
+    - "REDSTONE_BLOCK"                # 红石块
+    - "EMERALD_BLOCK"                 # 绿宝石块
+    - "NETHERITE_BLOCK"               # 下界合金块
+    - "DIAMOND_BLOCK"                 # 钻石块
+    - "LAPIS_BLOCK"                   # 青金石块
+    - "OBSIDIAN"                      # 黑曜石
+    - "SHULKER_BOX"                   # 潜影盒
+    # 物品类
+    - "END_CRYSTAL"                   # 末地水晶
+    - "WITHER_SKELETON_SKULL"         # 凋零骷髅头颅
+    - "ENDER_EYE"                     # 末影之眼
+    - "TNT"                           # TNT
+    # 钻石工具
+    - "DIAMOND_SWORD"                 # 钻石剑
+    - "DIAMOND_PICKAXE"               # 钻石镐
+    - "DIAMOND_SHOVEL"                # 钻石铲
+    - "DIAMOND_HOE"                   # 钻石锄
+    - "DIAMOND_AXE"                   # 钻石斧
+    # 其他工具和物品
+    - "TRIDENT"                       # 三叉戟
+    - "HEAVY_CORE"                    # 沉重核心
+    - "GOLDEN_APPLE"                  # 金苹果
+    - "GOLDEN_CARROT"                 # 金胡萝卜
+    - "NETHERITE_SCRAP"               # 下界合金碎片
+    - "GHAST_TEAR"                    # 恶魂之泪
+    - "EXPERIENCE_BOTTLE"             # 附魔之瓶
+    - "TRIAL_KEY"                     # 试炼钥匙
+    - "OMINOUS_BOTTLE"                # 不祥之瓶
+    - "OMINOUS_TRIAL_KEY"             # 不详试炼钥匙
+    - "CAKE"                          # 蛋糕
+    - "ENCHANTED_BOOK"                # 附魔书
+    - "GOLD_INGOT"                    # 金锭
+    - "IRON_INGOT"                    # 铁锭
+    - "DIAMOND"                       # 钻石
+    - "EMERALD"                       # 绿宝石
+    - "NETHERITE_INGOT"               # 下界合金锭
+    - "ANCIENT_DEBRIS"                # 远古残骸
+    - "NETHERITE_SWORD"               # 下界合金剑
+    - "NETHERITE_PICKAXE"             # 下界合金镐
+    - "NETHERITE_AXE"                 # 下界合金斧
+    - "NETHERITE_SHOVEL"              # 下界合金锹
+    - "NETHERITE_HOE"                 # 下界合金锄
+    - "NETHERITE_HELMET"              # 下界合金头盔
+    - "NETHERITE_CHESTPLATE"          # 下界合金胸甲
+    - "NETHERITE_LEGGINGS"            # 下界合金护腿
+    - "NETHERITE_BOOTS"               # 下界合金靴子
+    - "ENCHANTED_GOLDEN_APPLE"        # 附魔金苹果
+    - "ELYTRA"                        # 鞘翅
+    - "TOTEM_OF_UNDYING"              # 不死图腾
+    - "MACE"
+
+
+# 稀有物品设置
+rare-items:
+  # 稀有物品列表，包含你认为稀有的物品类型
+  # 使用Minecraft原版游戏物品ID
+  items:
+    # 块类
+    - "GOLD_BLOCK"                    # 金块
+    - "REDSTONE_BLOCK"                # 红石块
+    - "EMERALD_BLOCK"                 # 绿宝石块
+    - "NETHERITE_BLOCK"               # 下界合金块
+    - "DIAMOND_BLOCK"                 # 钻石块
+    - "LAPIS_BLOCK"                   # 青金石块
+    - "OBSIDIAN"                      # 黑曜石
+    - "SHULKER_BOX"                   # 潜影盒
+    # 物品类
+    - "END_CRYSTAL"                   # 末地水晶
+    - "WITHER_SKELETON_SKULL"         # 凋零骷髅头颅
+    - "ENDER_EYE"                     # 末影之眼
+    - "TNT"                           # TNT
+    # 钻石工具
+    - "DIAMOND_SWORD"                 # 钻石剑
+    - "DIAMOND_PICKAXE"               # 钻石镐
+    - "DIAMOND_SHOVEL"                # 钻石铲
+    - "DIAMOND_HOE"                   # 钻石锄
+    - "DIAMOND_AXE"                   # 钻石斧
+    # 其他工具和物品
+    - "TRIDENT"                       # 三叉戟
+    - "HEAVY_CORE"                    # 沉重核心
+    - "GOLDEN_APPLE"                  # 金苹果
+    - "GOLDEN_CARROT"                 # 金胡萝卜
+    - "NETHERITE_SCRAP"               # 下界合金碎片
+    - "GHAST_TEAR"                    # 恶魂之泪
+    - "EXPERIENCE_BOTTLE"             # 附魔之瓶
+    - "TRIAL_KEY"                     # 试炼钥匙
+    - "OMINOUS_BOTTLE"                # 不祥之瓶
+    - "OMINOUS_TRIAL_KEY"             # 不详试炼钥匙
+    - "CAKE"                          # 蛋糕
+    - "ENCHANTED_BOOK"                # 附魔书
+    - "GOLD_INGOT"                    # 金锭
+    - "IRON_INGOT"                    # 铁锭
+    - "DIAMOND"                       # 钻石
+    - "EMERALD"                       # 绿宝石
+    - "NETHERITE_INGOT"               # 下界合金锭
+    - "ANCIENT_DEBRIS"                # 远古残骸
+    - "NETHERITE_SWORD"               # 下界合金剑
+    - "NETHERITE_PICKAXE"             # 下界合金镐
+    - "NETHERITE_AXE"                 # 下界合金斧
+    - "NETHERITE_SHOVEL"              # 下界合金锹
+    - "NETHERITE_HOE"                 # 下界合金锄
+    - "NETHERITE_HELMET"              # 下界合金头盔
+    - "NETHERITE_CHESTPLATE"          # 下界合金胸甲
+    - "NETHERITE_LEGGINGS"            # 下界合金护腿
+    - "NETHERITE_BOOTS"               # 下界合金靴子
+    - "ENCHANTED_GOLDEN_APPLE"        # 附魔金苹果
+    - "ELYTRA"                        # 鞘翅
+    - "TOTEM_OF_UNDYING"              # 不死图腾
+    - "MACE"                          # 重锤

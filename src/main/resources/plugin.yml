@@ -1,0 +1,17 @@
+name: DfPubBinPlugin
+main: org.example1.dfPubBin.DfPubBinPlugin
+version: 1.0.3
+api-version: 1.21
+authors: [ ie32,18ay ]
+
+commands:
+  pbin:
+    description: 公共 / 私人垃圾桶
+    usage: /pbin <pub|priv>
+    aliases: [trash, garbage]
+
+  pbin2load:
+    description: 重新加载插件的配置
+    usage: /pbin2load
+    permission: dfpubbin.reload
+    permission-message: "你没有权限执行此命令！"

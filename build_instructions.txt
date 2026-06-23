@@ -1,0 +1,19 @@
+DfPubBinPlugin 构建说明
+========================
+
+要正确构建此Minecraft插件，您需要：
+
+1. 安装Maven
+2. 确保Java 21已安装
+
+构建步骤：
+1. 运行命令: mvn clean package
+2. 编译好的JAR文件将位于 target/ 目录中
+
+注意：如果遇到依赖问题，请确保您的网络可以访问Maven中央仓库和PaperMC仓库。
+
+已修复的代码问题：
+1. AutoCleanTask.java：修复了start方法的参数
+2. GuiListener.java：添加了缺失的GarbageManager导入
+3. ConfigManager.java：修复了配置键名
+4. RareItemManager.java：修复了导入语句中的多余空格
