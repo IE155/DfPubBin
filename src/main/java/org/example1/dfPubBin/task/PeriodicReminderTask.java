@@ -18,13 +18,18 @@ public class PeriodicReminderTask {
      * 
      * @param plugin 插件实例
      */
-    public static void start(DfPubBinPlugin plugin) {
+    public static BukkitTask start(DfPubBinPlugin plugin) {
+        // 如果未启用周期性提醒，则不启动任务
+        if (!ConfigManager.PERIODIC_REMINDER_ENABLED) {
+            return null;
+        }
+        
         // 从配置中获取提醒间隔（分钟）
         int intervalMinutes = ConfigManager.PERIODIC_REMINDER_INTERVAL;
         
         // 如果间隔设置为0或负数，则不启动任务
         if (intervalMinutes <= 0) {
-            return;
+            return null;
         }
         
         // 将分钟转换为ticks（1分钟 = 1200 ticks）
@@ -41,6 +46,7 @@ public class PeriodicReminderTask {
         
         // 启动周期性任务
         task = runnable.runTaskTimer(plugin, intervalTicks, intervalTicks);
+        return task;
     }
 
     /**

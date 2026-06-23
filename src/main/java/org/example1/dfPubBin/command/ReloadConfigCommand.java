@@ -19,19 +19,19 @@ public class ReloadConfigCommand implements CommandExecutor {
             // 重启自动清理任务以应用新的配置
             DfPubBinPlugin.getInstance().stopAutoCleanTask();
             DfPubBinPlugin.getInstance().startAutoCleanTask();
-            
+
+            // 重启周期性提醒任务以应用新的配置
+            DfPubBinPlugin.getInstance().stopPeriodicReminderTask();
+            DfPubBinPlugin.getInstance().startPeriodicReminderTask();
+
+            // 重启掉落物清理任务以应用新的配置
+            DfPubBinPlugin.getInstance().stopDroppedItemCleanupTask();
+            DfPubBinPlugin.getInstance().startDroppedItemCleanupTask();
+
+            // 重新加载禁用原版掉落物刷新机制监听器以应用新的配置
+            DfPubBinPlugin.getInstance().reloadItemDespawnListener();
+
             sender.sendMessage("§a配置文件已重新加载！");
-        
-        // 重启周期性提醒任务以应用新的配置
-        DfPubBinPlugin.getInstance().stopPeriodicReminderTask();
-        DfPubBinPlugin.getInstance().startPeriodicReminderTask();
-        
-        // 重启掉落物清理任务以应用新的配置
-        DfPubBinPlugin.getInstance().stopDroppedItemCleanupTask();
-        DfPubBinPlugin.getInstance().startDroppedItemCleanupTask();
-        
-        // 重新加载禁用原版掉落物刷新机制监听器以应用新的配置
-        DfPubBinPlugin.getInstance().reloadItemDespawnListener();
         } else {
             sender.sendMessage("§c你没有权限执行此命令！");
         }

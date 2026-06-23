@@ -11,10 +11,10 @@ import org.bukkit.scheduler.BukkitRunnable;
 public class AutoCleanTask {
 
     public static org.bukkit.scheduler.BukkitTask start(DfPubBinPlugin dfPubBinPlugin) {
-        if (!DfPubBinPlugin.getInstance().getConfig().getBoolean("auto-clean.enabled", true)) return null;
+        if (!ConfigManager.AUTO_CLEAN_ENABLED) return null;
 
         // 从配置中获取时间间隔
-        long interval = dfPubBinPlugin.getConfig().getLong("auto-clean.interval-ticks", 240000L); // 默认240000 ticks (20分钟)
+        long interval = ConfigManager.AUTO_CLEAN_INTERVAL;
 
         org.bukkit.scheduler.BukkitRunnable runnable = new org.bukkit.scheduler.BukkitRunnable() {
             @Override

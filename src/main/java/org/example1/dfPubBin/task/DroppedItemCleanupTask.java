@@ -8,6 +8,7 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.scheduler.BukkitTask;
 import org.example1.dfPubBin.DfPubBinPlugin;
 import org.example1.dfPubBin.config.ConfigManager;
 import org.example1.dfPubBin.data.GarbageContainer;
@@ -250,7 +251,7 @@ public class DroppedItemCleanupTask extends BukkitRunnable {
     /**
      * 启动任务
      */
-    public static void start(DfPubBinPlugin plugin) {
+    public static BukkitTask start(DfPubBinPlugin plugin) {
         DroppedItemCleanupTask task = new DroppedItemCleanupTask(plugin);
         
         // 从配置获取间隔时间（分钟），转换为ticks（1分钟 = 1200 ticks）
@@ -262,6 +263,6 @@ public class DroppedItemCleanupTask extends BukkitRunnable {
             intervalTicks = 1200L; // 默认1分钟
         }
         
-        task.runTaskTimer(plugin, intervalTicks, intervalTicks);
+        return task.runTaskTimer(plugin, intervalTicks, intervalTicks);
     }
 }

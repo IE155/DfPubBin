@@ -150,8 +150,8 @@ public class DfPubBinPlugin extends JavaPlugin {
             periodicReminderTask.cancel();
         }
         
-        // 启动新的周期性提醒任务
-        PeriodicReminderTask.start(this);
+        // 启动新的周期性提醒任务，保存任务引用以便后续停止
+        periodicReminderTask = PeriodicReminderTask.start(this);
     }
     
     // 停止周期性提醒任务
@@ -169,8 +169,8 @@ public class DfPubBinPlugin extends JavaPlugin {
         
         // 检查是否启用了掉落物清理功能
         if (ConfigManager.DROPPED_ITEM_CLEANUP_ENABLED) {
-            // 启动新的掉落物清理任务
-            DroppedItemCleanupTask.start(this);
+            // 启动新的掉落物清理任务，保存任务引用以便后续停止
+            droppedItemCleanupTask = DroppedItemCleanupTask.start(this);
         }
     }
     
