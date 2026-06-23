@@ -1,8 +1,8 @@
 name: DfPubBinPlugin
 main: org.example1.dfPubBin.DfPubBinPlugin
-version: 1.0.3
+version: 1.4
 api-version: 1.21
-authors: [ ie32,18ay ]
+authors: [ ie155,18ay ]
 
 commands:
   pbin:
