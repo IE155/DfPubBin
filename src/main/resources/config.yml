@@ -39,7 +39,7 @@ dropped-item-cleanup:
   # 启用或禁用掉落物处理功能（将所有掉落物放入垃圾桶）
   enabled: true
   # 处理的时间间隔（分钟）
-  interval-minutes: 10
+  interval-minutes: 5
 
 # 禁用原版掉落物刷新机制设置
 disable-item-despawn:
@@ -62,17 +62,17 @@ messages:
 
 
 
- # 指令相关消息
+  # 指令相关消息
   command-disabled: "§c该指令已被禁用"
   command-usage: "§c用法: /pbin <pub|priv>"
   command-invalid: "§c无效的子指令，请使用 /pbin <pub|priv>"
-  
+
   # 物品取回相关消息
   item-pickup-cooldown: "§c操作频繁，请%seconds%秒后重试"
-  
+
   # 垃圾桶相关消息
   trash-full: "§c垃圾桶已满，无法丢弃更多物品！"
-  
+
   # 丢弃确认界面相关消息
   discard-cancel: "§c取消丢弃操作"
   discard-success: "§a物品已成功丢弃到垃圾桶"
@@ -86,7 +86,7 @@ auto-clean:
   enabled: true
   # 自动清理的时间间隔（以 tick 为单位，20 ticks = 1秒）
   # 1200 ticks 即 60秒 = 1分钟
-  interval-ticks: 480000
+  interval-ticks: 6000
   whitelist-items: # 添加白名单物品列表
     # 块类
     - "GOLD_BLOCK"                    # 金块
